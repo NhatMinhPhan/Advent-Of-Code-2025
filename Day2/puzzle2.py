@@ -1,4 +1,4 @@
-READ_FILE = 'example.txt'
+READ_FILE = 'input.txt'
 invalid_sum = 0
 
 def get_ID_range(range: str) -> tuple[int, int]:
@@ -17,14 +17,14 @@ def is_invalid_id(id: int) -> bool:
             continue
         indices: list[int] = []
         for i in range(repeat_times):
-            indices.append(len(id_str) / repeat_times * i)
+            indices.append(len(id_str) // repeat_times * i)
         while indices[-1] < len(id_str):
             # Check all indices
             for i in range(len(indices) - 1):
                 # Check if char at each index in indices are the same.
                 # If not, try a different repeat_times in the next iteration of the outermost loop.
-                first_index = int(indices[i])
-                second_index = int(indices[i+1])
+                first_index = indices[i]
+                second_index = indices[i+1]
                 if id_str[first_index] != id_str[second_index]: # Not made of a sequence repeated twice
                     is_invalid = False
                     break
