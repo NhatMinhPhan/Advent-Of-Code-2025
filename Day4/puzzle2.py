@@ -1,4 +1,4 @@
-READ_FILE = 'input.txt'
+READ_FILE = 'example.txt'
 grid: list[str] = []
 accessible_rolls: set[tuple[int, int]] = set()
 total_rolls: int = 0
